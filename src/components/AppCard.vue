@@ -9,7 +9,7 @@ export default {
 <template>
   <div class="text-center my_card">
     <img :src="character.card_images[0].image_url" alt="">
-    <h4>{{ character.name }}</h4>
+    <h4 class="mt-3">{{ character.name }}</h4>
   </div>
 </template>
 
@@ -21,6 +21,10 @@ export default {
 
     img {
       max-width: 100%;
+    }
+
+    h4 {
+      font-size: 1rem;
     }
   }
 </style>

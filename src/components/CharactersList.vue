@@ -16,12 +16,12 @@ import AppCard from "./AppCard.vue";
 
 <template>
 
-<div class="container my_container">
+<div class="my_container container my-5">
   <div class="row">
     <div 
-    class="col my_col"
+    class="my_col-2 col-2 d-flex gy-3"
     v-for="character in store.characters">
-      <AppCard :character="character"/>
+      <AppCard class="w-100" :character="character"/>
     </div>
   </div>
 </div>
@@ -33,7 +33,7 @@ import AppCard from "./AppCard.vue";
   padding: 2rem;
   background-color: white;
 
-  .my_col {
+  .my_col-2 {
     width: calc(100% / 5) !important;
   }
 }

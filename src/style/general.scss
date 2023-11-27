@@ -1,3 +1,5 @@
+@use "../style/partials/variable" as *;
+
 @import "bootstrap/scss/bootstrap.scss";
 
 @import '@fontsource/roboto';
@@ -10,4 +12,5 @@
 
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: $main-bg-color;
 }
