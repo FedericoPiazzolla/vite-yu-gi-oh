@@ -1,23 +1,21 @@
 <script >
 import axios from "axios";
-import { store } from "./store.js";
+import { store } from "./store";
 import AppHeader from './components/AppHeader.vue';
 import CharactersList from "./components/CharactersList.vue";
 
 export default {
    data() {
     return {
-      store
+      store,
     };
   },
   created() {
     this.store.loading = true;
-    axios
-      .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
-      .then((resp) => {
-        this.store.characters = resp.data.data;
-      });
-      this.store.loading = false;
+    axios.get(this.store.apiUrl).then((resp) => {
+      this.store.characters = resp.data.data;
+    });
+    this.store.loading = false;
 
   },
   components: {

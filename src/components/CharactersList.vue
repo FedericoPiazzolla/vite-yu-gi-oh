@@ -11,10 +11,10 @@ import CardStats from "./CardStats.vue";
       };
     },
     components: {
-    AppCard,
-    AppLoader,
-    CardStats
-}
+      AppCard,
+      AppLoader,
+      CardStats
+    },
   };
 </script>
 
@@ -23,7 +23,7 @@ import CardStats from "./CardStats.vue";
 <div class="my_container container my-5">
   <CardStats/>
 
-  <AppLoader v-if="store.loading"/>
+  <AppLoader v-if="store.loading" />
 
   <div class="row" v-else>
     <div 
