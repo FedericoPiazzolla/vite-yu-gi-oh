@@ -7,6 +7,6 @@
 </template>
 
 <style lang="scss">
-@use "./style/general.scss"
+  @use "./style/general.scss"
 
 </style>
