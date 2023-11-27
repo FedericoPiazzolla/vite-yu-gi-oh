@@ -3,6 +3,7 @@ import axios from "axios";
 import { store } from "./store";
 import AppHeader from './components/AppHeader.vue';
 import CharactersList from "./components/CharactersList.vue";
+import AppLoader from "./components/AppLoader.vue";
 
 export default {
    data() {
@@ -14,13 +15,15 @@ export default {
     this.store.loading = true;
     axios.get(this.store.apiUrl).then((resp) => {
       this.store.characters = resp.data.data;
-    });
-    this.store.loading = false;
-
+    }).finally(() => {
+            this.store.loading = false;
+            console.log(this.store.loading);
+        });
   },
   components: {
     AppHeader,
     CharactersList,
+    AppLoader,
   }
 }
 
@@ -28,7 +31,8 @@ export default {
 
 <template>
   <AppHeader/>
-  <CharactersList />
+  <AppLoader v-if="store.loading" />
+  <CharactersList v-else/>
 </template>
 
 <style lang="scss">

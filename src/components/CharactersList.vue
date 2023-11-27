@@ -1,7 +1,6 @@
 <script>
 import { store } from "../store";
 import AppCard from "./AppCard.vue";
-import AppLoader from "./AppLoader.vue";
 import CardStats from "./CardStats.vue";
 
   export default {
@@ -12,7 +11,6 @@ import CardStats from "./CardStats.vue";
     },
     components: {
       AppCard,
-      AppLoader,
       CardStats
     },
   };
@@ -23,9 +21,7 @@ import CardStats from "./CardStats.vue";
 <div class="my_container container my-5">
   <CardStats/>
 
-  <AppLoader v-if="store.loading" />
-
-  <div class="row" v-else>
+  <div class="row">
     <div 
     class="my_col-2 col-2 d-flex g-3"
     v-for="character in store.characters">
