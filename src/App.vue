@@ -2,6 +2,7 @@
 import axios from "axios";
 import { store } from "./store.js";
 import AppHeader from './components/AppHeader.vue';
+import CharactersList from "./components/CharactersList.vue";
 
 export default {
    data() {
@@ -16,6 +17,8 @@ export default {
   },
   components: {
     AppHeader,
+    CharactersList,
+    
   }
 }
 
@@ -23,6 +26,7 @@ export default {
 
 <template>
   <AppHeader/>
+  <CharactersList />
 </template>
 
 <style lang="scss">
