@@ -1,7 +1,7 @@
 <script>
 export default {
   props: {
-    character: Array,
+    character: Object,
   },
 };
 </script>
@@ -9,7 +9,11 @@ export default {
 <template>
   <div class="text-center my_card">
     <img :src="character.card_images[0].image_url" alt="">
-    <h4 class="mt-3">{{ character.name }}</h4>
+    <div class="my_info_card">
+      <h4 class="mt-3">{{ character.name }}</h4>
+      <p>{{ character.race }}</p>
+    </div>
+    
   </div>
 </template>
 
@@ -23,8 +27,19 @@ export default {
       max-width: 100%;
     }
 
-    h4 {
-      font-size: 1rem;
+    .my_info_card {
+      display: flex;
+      flex-direction: column;
+      
+      h4 {
+        font-size: 1rem;
+        padding: 1rem;
+      }
+
+      p {
+        color: black;
+      }
     }
+    
   }
 </style>

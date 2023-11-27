@@ -2,5 +2,5 @@ import { reactive } from "vue";
 
 export const store = reactive({
   characters: [],
-  loading: false
+  loading: false,
 });

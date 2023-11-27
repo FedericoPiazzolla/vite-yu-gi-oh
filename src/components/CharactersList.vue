@@ -1,6 +1,7 @@
 <script>
 import { store } from "../store";
 import AppCard from "./AppCard.vue";
+import AppLoader from "./AppLoader.vue";
 
   export default {
     data() {
@@ -10,6 +11,7 @@ import AppCard from "./AppCard.vue";
     },
     components: {
       AppCard,
+      AppLoader
     }
   };
 </script>
@@ -17,11 +19,14 @@ import AppCard from "./AppCard.vue";
 <template>
 
 <div class="my_container container my-5">
-  <div class="row">
+
+  <AppLoader v-if="store.loading"/>
+
+  <div class="row" v-else>
     <div 
     class="my_col-2 col-2 d-flex gy-3"
     v-for="character in store.characters">
-      <AppCard class="w-100" :character="character"/>
+      <AppCard :character="character"/>
     </div>
   </div>
 </div>
