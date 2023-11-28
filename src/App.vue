@@ -14,12 +14,13 @@ export default {
   },
   created() {
     this.store.loading = true;
-    axios.get(this.store.apiUrl).then((resp) => {
-      this.store.characters = resp.data.data;
-    }).finally(() => {
-            this.store.loading = false;
-            console.log(this.store.loading);
-        });
+    setTimeout(() => {
+      axios.get(this.store.apiUrl).then((resp) => {
+        this.store.characters = resp.data.data;
+      })
+      this.store.loading = false;
+    },2000)
+    
   },
   components: {
     AppHeader,
