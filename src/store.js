@@ -8,9 +8,9 @@ export const store = reactive({
   indexCard: 0,
   select: "",
   archetypeArray: [
-    "alien",
-    "ally of justice",
-    "ancient gear",
+    "Alien",
+    "Ally of justice",
+    "Ancient gear",
     "Archfiend",
     "Infernoble Arms",
     "Noble Knight",
