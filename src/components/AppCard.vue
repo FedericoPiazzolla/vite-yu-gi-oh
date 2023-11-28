@@ -20,7 +20,9 @@ export default {
 <style lang="scss" scoped>
 @use "../style/partials/variable" as *;
   .my_card {
-    background-color: $main-bg-color;
+    // background-color: $main-bg-color;
+    background-image: url(../assets/img/background-yu-gi-oh.png);
+    border: 3px solid black;
     color: white;
 
     img {
@@ -34,10 +36,14 @@ export default {
       h4 {
         font-size: 1rem;
         padding: 1rem;
+        font-weight: bold;
       }
 
       p {
         color: black;
+        font-size: .8rem;
+        display: inline-block;
+        color: yellow;
       }
     }
     
