@@ -7,7 +7,7 @@ import AppLoader from "./components/AppLoader.vue";
 import AppSearch from "./components/AppSearch.vue";
 
 export default {
-   data() {
+  data() {
     return {
       store,
     };
@@ -27,14 +27,33 @@ export default {
     CharactersList,
     AppLoader,
     AppSearch
+  },
+  methods: {
+    apiFocus(num, offset, archetype) {
+      axios
+        .get("https://db.ygoprodeck.com/api/v7/cardinfo.php", {
+          params: {
+            num: num,
+            offset: offset,
+            archetype: archetype,
+          }
+        })
+        .then((resp) => {
+          this.store.characters = resp.data.data;
+        })
+    },
+    selectCards() {
+      this.store.indexCard = 0;
+      this.apiFocus(20, 0, this.store.searchText);
+    },
   }
-}
+};
 
 </script>
 
 <template>
   <AppHeader/>
-  <AppSearch/>
+  <AppSearch @search="selectCards"/>
   <AppLoader v-if="store.loading" />
   <CharactersList v-else/>
 </template>

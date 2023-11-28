@@ -15,6 +15,8 @@ export default {
     <select 
     name="chose-archetype" 
     id="chose-archetype"
+    v-model="store.searchText"
+    @change="$emit(`search`)"
     >
       <option v-for="archetype in store.archetypeArray" :value="`${archetype}`">{{ archetype }}</option>
     </select>
