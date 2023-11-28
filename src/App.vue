@@ -4,6 +4,7 @@ import { store } from "./store";
 import AppHeader from './components/AppHeader.vue';
 import CharactersList from "./components/CharactersList.vue";
 import AppLoader from "./components/AppLoader.vue";
+import AppSearch from "./components/AppSearch.vue";
 
 export default {
    data() {
@@ -24,6 +25,7 @@ export default {
     AppHeader,
     CharactersList,
     AppLoader,
+    AppSearch
   }
 }
 
@@ -31,6 +33,7 @@ export default {
 
 <template>
   <AppHeader/>
+  <AppSearch/>
   <AppLoader v-if="store.loading" />
   <CharactersList v-else/>
 </template>

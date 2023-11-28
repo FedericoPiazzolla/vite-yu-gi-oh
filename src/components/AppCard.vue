@@ -7,11 +7,11 @@ export default {
 </script>
 
 <template>
-  <div class="text-center my_card">
-    <img :src="character.card_images[0].image_url" alt="">
+  <div class="text-center my_card h-100">
+    <img :src="character.card_images[0].image_url" :alt="character.name">
     <div class="my_info_card">
       <h4 class="mt-3">{{ character.name }}</h4>
-      <p>{{ character.race }}</p>
+      <p>{{ character.archetype ? character.archetype : "nessun archetipo" }}</p>
     </div>
     
   </div>
