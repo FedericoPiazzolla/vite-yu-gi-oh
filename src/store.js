@@ -7,5 +7,15 @@ export const store = reactive({
   searchText: "",
   indexCard: 0,
   select: "",
-  archetypeArray: ["alien","ally of justice","ancient gear"]
+  archetypeArray: [
+    "alien",
+    "ally of justice",
+    "ancient gear",
+    "Archfiend",
+    "Infernoble Arms",
+    "Noble Knight",
+    "Melodious",
+    "Elemental HERO",
+    "Umi",
+  ]
 });
