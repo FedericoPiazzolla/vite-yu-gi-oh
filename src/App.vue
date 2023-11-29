@@ -15,10 +15,13 @@ export default {
   created() {
     this.store.loading = true;
     setTimeout(() => {
-      axios.get(this.store.apiUrl).then((resp) => {
+      axios
+      .get(this.store.apiUrl)
+      .then((resp) => {
         this.store.characters = resp.data.data;
       })
-      this.store.loading = false;
+      .finally(this.store.loading = false)
+      
     },2000)
     
   },
@@ -29,14 +32,19 @@ export default {
     AppSearch
   },
   methods: {
-    apiFocus(num, offset, archetype) {
+    apiFocus(num) {
+
+      const params = {
+        num: num,
+        offset: 0,
+      }
+
+      if (this.store.searchText !== "") {
+        params.archetype = this.store.searchText;
+      }
       axios
         .get("https://db.ygoprodeck.com/api/v7/cardinfo.php", {
-          params: {
-            num: num,
-            offset: offset,
-            archetype: archetype,
-          }
+          params
         })
         .then((resp) => {
           this.store.characters = resp.data.data;
@@ -44,7 +52,7 @@ export default {
     },
     selectCards() {
       this.store.indexCard = 0;
-      this.apiFocus(100, 0, this.store.searchText);
+      this.apiFocus(100);
     },
   }
 };
