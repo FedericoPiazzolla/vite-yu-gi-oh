@@ -51,7 +51,6 @@ export default {
         })
     },
     selectCards() {
-      this.store.indexCard = 0;
       this.apiFocus(100);
     },
   }
